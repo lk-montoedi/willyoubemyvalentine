@@ -7,6 +7,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import confetti from 'canvas-confetti';
 import VideoPlayer from '@/components/custom/VideoPlayer';
+import ImageCollage from '@/components/custom/ImageCollage';
 
 const quizQuestions = [
   {
@@ -39,6 +40,24 @@ const quizQuestions = [
     options: ["3 hours", "5 hours", "7 hours"],
     correctAnswer: "7 hours",
   },
+];
+
+const collageImages = [
+  'us1.jpeg',
+  'us10.jpeg',
+  'us11.jpeg',
+  'us12.jpeg',
+  'us13.jpeg',
+  'us2.jpeg',
+  'us3.jpeg',
+  'us4.jpeg',
+  'us5.jpeg',
+  'us6.jpeg',
+  'us7.jpeg',
+  'us8.jpeg',
+  'us9.jpeg',
+  'WhatsApp Image 2026-02-14 at 19.07.39.jpeg',
+  'WhatsApp Image 2026-02-14 at 19.07.42.jpeg',
 ];
 
 export default function Home() {
@@ -86,9 +105,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-100 to-red-100 p-4 flex items-center justify-center">
-      <div className="max-w-md w-full space-y-8">
+      <div className="w-full space-y-8">
         {isFinished ? (
-          <VideoPlayer />
+          <ImageCollage images={collageImages}>
+            <VideoPlayer />
+          </ImageCollage>
         ) : (
           <Card className="p-8 animate-fade-in space-y-6">
             <h2 className="text-2xl font-semibold text-center text-pink-600">
@@ -108,7 +129,7 @@ export default function Home() {
                   />
                   <Label
                     htmlFor={option}
-                    className={`flex items-center justify-center p-4 border rounded-lg cursor-pointer transition-all duration-200 hover:border-pink-300 hover:bg-pink-50/50 ${
+                    className={`flex items-center justify-center p-.4 border rounded-lg cursor-pointer transition-all duration-200 hover:border-pink-300 hover:bg-pink-50/50 ${
                       selectedAnswer === option
                         ? 'border-pink-500 bg-pink-50 shadow-lg'
                         : ''

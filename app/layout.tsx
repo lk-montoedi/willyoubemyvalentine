@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Great_Vibes } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -8,6 +8,13 @@ const inter = Inter({
   preload: true,
   fallback: ['system-ui', 'arial'],
   variable: '--font-inter',
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-great-vibes',
 });
 
 export const metadata: Metadata = {
@@ -21,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${inter.variable} ${greatVibes.variable}`}>
       <body className="min-h-screen">
         <main>
           {children}
