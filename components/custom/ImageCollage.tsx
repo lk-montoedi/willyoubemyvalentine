@@ -48,7 +48,7 @@ const ImageCollage: React.FC<ImageCollageProps> = ({ images, children }) => {
   return (
     <div className="flex flex-col w-full min-h-screen p-4">
       <h1 className="text-4xl text-pink-500 font-great-vibes text-center my-4">
-        Click/Drag Picture
+        Click Picture
       </h1>
       <div className="w-full flex justify-center mb-8">
         {children}
